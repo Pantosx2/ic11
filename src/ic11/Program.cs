@@ -152,7 +152,7 @@ public class Program
                     throw new FileNotFoundException($"Included file not found: {full}");
 
                 if (!seen.Add(full))
-                    throw new Exception($"Recursive include detected: {full}");
+                    return string.Empty;
 
                 var includedText = File.ReadAllText(full);
 
